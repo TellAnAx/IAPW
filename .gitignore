@@ -1,0 +1,27 @@
+# RStudio project files
+*.Rproj
+.Rproj.user/
+
+# R session files
+.Rhistory
+.Rapp.history
+.RData
+.Ruser
+.Rprofile
+
+# R package build artifacts
+/build/
+inst/doc/
+inst/figures/
+.Rbuildignore
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Temporary files
+*.swp
+*.swo
