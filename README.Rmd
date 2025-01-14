@@ -1,0 +1,17 @@
+---
+output: github_document
+always_allow_html: true
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r echo=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# IAPW package
+Convenience functions to import data from laboratory devices etc. at the Institute of Aquaculture and Protection of Water, Faculty of Fisheries and Protection of Waters, University of South Bohemia, České Budějovice, Czech Republic.
