@@ -1,3 +1,14 @@
+#' File path to S drive
+#'
+#' Convenience function to set the file path to the private folder on S drive.
+#'
+#' @param file_path character; path to file.
+#' @param name character; name of employee, usually in the format "LASTNAME FIRSTNAME".
+#' @param folder character; indicates whether to set the path to the "READ ONLY"
+#' or the "READ WRITE FREE" folder.
+#' @param server_path character; hard-coded path to the employee folders on S drive.
+#'
+#' @export
 here_S <- function(file_path,
                    name,
                    folder = c("r", "rw"),

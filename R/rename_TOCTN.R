@@ -1,4 +1,11 @@
-
+#' Rename data from Shimadzu TOC-L/TNM-L
+#'
+#' Function to automatically rename column names of data imports from the
+#' Shimadzu TOC-L/TNM-L analyzer.
+#'
+#' @param data input data to rename columns
+#'
+#' @export
 rename_TOCTN <- function(data) {
   rename_columns <- function(colnames_raw) {
     case_when(
