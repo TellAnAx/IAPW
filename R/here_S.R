@@ -1,6 +1,7 @@
 #' File path to S drive
 #'
-#' Convenience function to set the file path to the private folder on S drive.
+#' Convenience function to set the file path to the private folder
+#' on S drive.
 #'
 #' @param file_path character; path to file.
 #' @param name character; name of employee, usually in the format "LASTNAME FIRSTNAME".
@@ -12,7 +13,7 @@
 here_S <- function(file_path,
                    name,
                    folder = c("r", "rw"),
-                   server_path = "S:/010 SLOŽKY ZAMĚSTNANCU - FOLDERS OF EMPLOYEES") {
+                   server_path = "S:/010 SLO\u017DKY ZAM\u011ASTNANCU - FOLDERS OF EMPLOYEES") {
 
   # Make sure all name inputs work
   name <- toupper(name)

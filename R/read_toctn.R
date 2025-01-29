@@ -1,7 +1,8 @@
-#' Import data from Shimadzu TOC-L/TNM-L
+#'  Import data from Shimadzu TOC-L/TNM-L
 #'
-#' Function that imports either a basic or a detailed data report file from
-#' the Shimadzu TOC-L/TNM-L analyzer located in ZR 02 040.
+#'  Function that imports either a basic or a detailed data report file
+#'  from the Shimadzu TOC-L/TNM-L analyzer located in ZR 02 040.
+#'
 #'
 #' @param file_path character; path to the file to load
 #' @param detailed logical; indicating whether the file to be loaded is a basic
@@ -14,8 +15,12 @@
 #'
 #' @author Anil Axel Tellbüscher
 #'
+#' @importFrom readr read_delim
+#' @importFrom readr locale
+#' @importFrom dplyr if_else
+#'
 #' @export
-load_TOCTN <- function(
+read_toctn <- function(
 
     # Define the path to the file to load
     file_path,
@@ -30,11 +35,11 @@ load_TOCTN <- function(
     decimal_mark = ","
     ) {
 
-  toctn_data <- read_delim(
+  toctn_data <- readr::read_delim(
     file = file_path,
     delim =  "\t",
-    locale = locale(decimal_mark = decimal_mark),
-    skip = if_else(detailed == TRUE, 14, 11)
+    locale = readr::locale(decimal_mark = decimal_mark),
+    skip = dplyr::if_else(detailed == TRUE, 14, 11)
     )
 
   return(toctn_data)

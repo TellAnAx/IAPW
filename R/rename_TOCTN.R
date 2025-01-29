@@ -5,10 +5,17 @@
 #'
 #' @param data input data to rename columns
 #'
+#' @return something
+#'
+#' @author Anil Axel Tellbüscher
+#'
+#' @importFrom dplyr case_when
+#' @importFrom dplyr rename_with
+#'
 #' @export
-rename_TOCTN <- function(data) {
+rename_toctn <- function(data) {
   rename_columns <- function(colnames_raw) {
-    case_when(
+    dplyr::case_when(
       colnames_raw == "Type" ~ "type",
       colnames_raw == "Anal." ~ "analyte",
       colnames_raw == "Sample Name" ~ "id1_sample",
@@ -47,8 +54,7 @@ rename_TOCTN <- function(data) {
     )
   }
 
-  renamed_data <- data %>%
-    rename_with(rename_columns)
+  renamed_data <- dplyr::rename_with(data, rename_columns)
 
   return(renamed_data)
 }

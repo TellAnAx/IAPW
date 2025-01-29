@@ -14,8 +14,11 @@
 #'
 #' @author Anil Axel Tellbüscher
 #'
+#' @importFrom readr read_delim
+#' @importFrom readr locale
+#'
 #' @export
-load_MasterSizer <- function(
+read_ms3000 <- function(
 
     file_path,
 
@@ -24,9 +27,9 @@ load_MasterSizer <- function(
     decimal_mark = ","
     ) {
 
-data <- read.delim(
+data <- readr::read_delim(
   delim = "\t",
-  locale = locale(decimal_mark = decimal_mark),
+  locale = readr::locale(decimal_mark = decimal_mark),
   file = file_path,
   fileEncoding = "UTF-16"
   )
