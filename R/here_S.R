@@ -12,8 +12,8 @@
 #' @export
 here_S <- function(file_path,
                    name,
-                   folder = c("r", "rw"),
-                   server_path = "S:/010 SLO\u017DKY ZAM\u011ASTNANCU - FOLDERS OF EMPLOYEES") {
+                   folder = "w",
+                   server_path = "S:/010 SLO/u017DKY ZAM/u011ASTNANCU - FOLDERS OF EMPLOYEES") {
 
   # Make sure all name inputs work
   name <- toupper(name)
@@ -24,12 +24,12 @@ here_S <- function(file_path,
 
   if(folder == "r") {
     folder_name <- "READ ONLY"
-  } else if (folder == "rw") {
+  } else if (folder == "w") {
     folder_name <- "READ WRITE FREE"
   } else {
     warning("Select the folder!\n
             'r'   = READ ONLY\n
-            'rw'  = READ WRITE FREE")
+            'w'  = READ WRITE FREE")
   }
 
   folder_path <- paste(last_name, "-", folder_name)
