@@ -16,7 +16,7 @@
 here_S <- function(file_path,
                    name = Sys.getenv("FFPW_NAME"),
                    folder = "w",
-                   server_path = "S:/010 SLO/u017DKY ZAM/u011ASTNANCU - FOLDERS OF EMPLOYEES") {
+                   server_path = "S:/010 SLO\u017DKY ZAM\u011ASTNANCU - FOLDERS OF EMPLOYEES") {
 
   # Make sure all name inputs work
   if(name == "") {

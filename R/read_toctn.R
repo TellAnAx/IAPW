@@ -39,7 +39,7 @@ read_toctn <- function(
     file = file_path,
     delim =  "\t",
     locale = readr::locale(decimal_mark = decimal_mark),
-    skip = dplyr::if_else(detailed == TRUE, 14, 11)
+    skip = dplyr::if_else(detailed == TRUE, 13, 11)
     )
 
   return(toctn_data)
