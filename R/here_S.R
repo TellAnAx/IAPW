@@ -1,21 +1,28 @@
-#' File path to S drive
+#' File path to S: drive
 #'
-#' Convenience function to set the file path to the private folder
-#' on S drive.
+#' The `here_S()` function provides a convenient shortcut to access
+#' the private folder on S: drive. Note that the function only works
+#' when the computer is connected  to the university network.
 #'
 #' @param file_path character; path to file.
-#' @param name character; name of employee, usually in the format "LASTNAME FIRSTNAME".
-#' @param folder character; indicates whether to set the path to the "READ ONLY"
-#' or the "READ WRITE FREE" folder.
-#' @param server_path character; hard-coded path to the employee folders on S drive.
+#' @param name character; name of employee, usually in the format
+#' "LASTNAME FIRSTNAME". The name is read from .Renviron by default.
+#' @param folder character; indicates whether to set the path to the
+#' "READ ONLY" or the "READ WRITE FREE" folder.
+#' @param server_path character; hard-coded path to the employee folders
+#' on S: drive.
 #'
 #' @export
 here_S <- function(file_path,
-                   name,
+                   name = Sys.getenv("FFPW_NAME"),
                    folder = "w",
                    server_path = "S:/010 SLO/u017DKY ZAM/u011ASTNANCU - FOLDERS OF EMPLOYEES") {
 
   # Make sure all name inputs work
+  if(name == "") {
+    warning("No name provided and 'FPPW_NAME' not found in .Renviron.")
+  }
+
   name <- toupper(name)
 
 

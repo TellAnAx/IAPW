@@ -2,26 +2,29 @@
 % Please edit documentation in R/here_S.R
 \name{here_S}
 \alias{here_S}
-\title{File path to S drive}
+\title{File path to S: drive}
 \usage{
 here_S(
   file_path,
-  name,
-  folder = c("r", "rw"),
-  server_path = "S:/010 SLOŽKY ZAMĚSTNANCU - FOLDERS OF EMPLOYEES"
+  name = Sys.getenv("FFPW_NAME"),
+  folder = "w",
+  server_path = "S:/010 SLO/u017DKY ZAM/u011ASTNANCU - FOLDERS OF EMPLOYEES"
 )
 }
 \arguments{
 \item{file_path}{character; path to file.}
 
-\item{name}{character; name of employee, usually in the format "LASTNAME FIRSTNAME".}
+\item{name}{character; name of employee, usually in the format
+"LASTNAME FIRSTNAME". The name is read from .Renviron by default.}
 
-\item{folder}{character; indicates whether to set the path to the "READ ONLY"
-or the "READ WRITE FREE" folder.}
+\item{folder}{character; indicates whether to set the path to the
+"READ ONLY" or the "READ WRITE FREE" folder.}
 
-\item{server_path}{character; hard-coded path to the employee folders on S drive.}
+\item{server_path}{character; hard-coded path to the employee folders
+on S: drive.}
 }
 \description{
-Convenience function to set the file path to the private folder
-on S drive.
+The `here_S()` function provides a convenient shortcut to access
+the private folder on S: drive. Note that the function only works
+when the computer is connected  to the university network.
 }
