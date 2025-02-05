@@ -3,6 +3,7 @@
 export(here_S)
 export(read_ms3000)
 export(read_toctn)
+export(rename_aas)
 export(rename_toctn)
 importFrom(dplyr,case_when)
 importFrom(dplyr,if_else)

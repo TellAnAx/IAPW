@@ -21,7 +21,8 @@ a tibble
 }
 \description{
 Function that imports either a basic or a detailed data report file
- from the Shimadzu TOC-L/TNM-L analyzer located in ZR 02 040.
+ from the Shimadzu TOC-L/TNM-L analyzer located in the small lab at
+ ZR.
 }
 \author{
 Anil Axel Tellbüscher

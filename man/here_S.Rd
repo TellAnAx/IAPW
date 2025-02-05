@@ -8,7 +8,7 @@ here_S(
   file_path,
   name = Sys.getenv("FFPW_NAME"),
   folder = "w",
-  server_path = "S:/010 SLO/u017DKY ZAM/u011ASTNANCU - FOLDERS OF EMPLOYEES"
+  server_path = "S:/010 SLOŽKY ZAMĚSTNANCU - FOLDERS OF EMPLOYEES"
 )
 }
 \arguments{

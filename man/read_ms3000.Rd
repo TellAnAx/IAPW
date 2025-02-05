@@ -21,7 +21,7 @@ MasterSizer 3000 laser diffraction particle analyzer equipped with
 a HydroEV unit.
 }
 \details{
-The device is located at XXX, Husova building.
+The device is located at the Husova building.
 }
 \author{
 Anil Axel Tellbüscher
