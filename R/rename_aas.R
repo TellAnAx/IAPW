@@ -50,7 +50,7 @@ rename_aas <- function(data) {
       colnames_raw == "Date" ~ "date",
       colnames_raw == "Time" ~ "time",
       colnames_raw == "User Name" ~ "user",
-      colnames_raw == "Device Name" ~ "device"
+      colnames_raw == "Device Name" ~ "device",
       TRUE ~ colnames_raw # Keep original name if no match
     )
   }
