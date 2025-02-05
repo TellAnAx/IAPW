@@ -4,7 +4,7 @@
 \alias{read_aas}
 \title{Import data from Shimadzu F-AAS}
 \usage{
-read_aas(file_path, detailed = FALSE, skip_lines = 2)
+read_aas(file_path, skip_lines = 2)
 }
 \description{
 Function that imports either a basic or a detailed data report file
@@ -13,9 +13,6 @@ Function that imports either a basic or a detailed data report file
 }
 \details{
 @param file_path character; path to the file to load
- @param detailed logical; indicating whether the file to be loaded is a basic
- report (only summarized results) or a detailed report (including data from
- individual injections).
  @param skip_lines numeric; number of lines to be skipped when reading the
  file. The value depends on how many lines the initial comment at the
  beginning of a measurement file has.
@@ -23,6 +20,8 @@ Function that imports either a basic or a detailed data report file
  @return a tibble
 
  @author Anil Axel Tellbüscher
+
+ @importFrom readr read_delim
 
  @export
 }
