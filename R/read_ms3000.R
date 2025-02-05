@@ -4,7 +4,7 @@
 #' MasterSizer 3000 laser diffraction particle analyzer equipped with
 #' a HydroEV unit.
 #'
-#' The device is located at XXX, Husova building.
+#' The device is located at the Husova building.
 #'
 #' @param file_path character; path to file
 #' @param decimal_mark character; indicating the decimal mark to be used. The
