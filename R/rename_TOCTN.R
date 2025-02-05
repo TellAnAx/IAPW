@@ -46,7 +46,7 @@ rename_toctn <- function(data) {
       colnames_raw == "CV Area" ~ "area_cv",
       colnames_raw == "SD Conc" ~ "conc_sd",
       colnames_raw == "CV Conc" ~ "conc_cv",
-      colnames_raw == "Vial" ~ "no_vial",
+      colnames_raw == "Vial" ~ "position",
       colnames_raw == "Excluded" ~ "excluded",
       colnames_raw == "Inj. Vol." ~ "V_injection",
       colnames_raw == "Auto. Dil." ~ "dil_auto",
