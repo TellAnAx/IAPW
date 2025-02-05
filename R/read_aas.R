@@ -8,6 +8,9 @@
 #'  @param detailed logical; indicating whether the file to be loaded is a basic
 #'  report (only summarized results) or a detailed report (including data from
 #'  individual injections).
+#'  @param skip_lines numeric; number of lines to be skipped when reading the
+#'  file. The value depends on how many lines the initial comment at the
+#'  beginning of a measurement file has.
 #'
 #'  @return a tibble
 #'
