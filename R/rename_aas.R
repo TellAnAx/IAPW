@@ -45,7 +45,7 @@ rename_aas <- function(data) {
       colnames_raw == "RPD" ~ "rpd",
       colnames_raw == "%R" ~ "recovery",
       colnames_raw == "C#" ~ "cal_no",
-      colnames_raw == "SG#" ~ "sample_group"
+      colnames_raw == "SG#" ~ "sample_group",
       colnames_raw == "Out of Control Remark" ~ "remark",
       colnames_raw == "Date" ~ "date",
       colnames_raw == "Time" ~ "time",
