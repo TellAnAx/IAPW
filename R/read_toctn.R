@@ -1,8 +1,8 @@
 #'  Import data from Shimadzu TOC-L/TNM-L
 #'
 #'  Function that imports either a basic or a detailed data report file
-#'  from the Shimadzu TOC-L/TNM-L analyzer located in ZR 02 040.
-#'
+#'  from the Shimadzu TOC-L/TNM-L analyzer located in the small lab at
+#'  ZR.
 #'
 #' @param file_path character; path to the file to load
 #' @param detailed logical; indicating whether the file to be loaded is a basic
