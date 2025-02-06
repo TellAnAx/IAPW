@@ -4,7 +4,7 @@
 \alias{read_toctn}
 \title{Import data from Shimadzu TOC-L/TNM-L}
 \usage{
-read_toctn(file_path, detailed = FALSE, decimal_mark = ",")
+read_toctn(file_path, detailed = FALSE, ...)
 }
 \arguments{
 \item{file_path}{character; path to the file to load}
@@ -13,8 +13,7 @@ read_toctn(file_path, detailed = FALSE, decimal_mark = ",")
 report (only summarized results) or a detailed report (including data from
 individual injections).}
 
-\item{decimal_mark}{character; indicating the decimal mark to be used. The
-default is comma, due to the language settings of the computer.}
+\item{...}{further arguments passed to or from other methods.}
 }
 \value{
 a tibble

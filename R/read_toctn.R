@@ -8,8 +8,7 @@
 #' @param detailed logical; indicating whether the file to be loaded is a basic
 #' report (only summarized results) or a detailed report (including data from
 #' individual injections).
-#' @param decimal_mark character; indicating the decimal mark to be used. The
-#' default is comma, due to the language settings of the computer.
+#' @param ... further arguments passed to or from other methods.
 #'
 #' @return a tibble
 #'
@@ -30,15 +29,13 @@ read_toctn <- function(
     # "standard": including summarized results
     detailed = FALSE,
 
-    # Set decimal mark
-    # Czechia: "," instead of "."
-    decimal_mark = ","
+    ...
     ) {
 
   toctn_data <- readr::read_delim(
     file = file_path,
     delim =  "\t",
-    locale = readr::locale(decimal_mark = decimal_mark),
+    locale = readr::locale(decimal_mark = ","),
     skip = dplyr::if_else(detailed == TRUE, 13, 11)
     )
 

@@ -4,24 +4,25 @@
 \alias{read_aas}
 \title{Import data from Shimadzu F-AAS}
 \usage{
-read_aas(file_path, skip_lines = 2)
+read_aas(file_path, skip_lines = 2, ...)
+}
+\arguments{
+\item{file_path}{character; path to the file to load.}
+
+\item{skip_lines}{numeric; number of lines to be skipped when
+reading the file. The value depends on how many lines the initial
+comment at the beginning of a measurement file has.}
+
+\item{...}{further arguments passed to or from other methods.}
+}
+\value{
+a tibble.
 }
 \description{
 Function that imports either a basic or a detailed data report file
  from the Shimadzu AA-7000 Flame-Atomic absorption spectroscope
  located in the small lab at ZR.
 }
-\details{
-@param file_path character; path to the file to load
- @param skip_lines numeric; number of lines to be skipped when reading the
- file. The value depends on how many lines the initial comment at the
- beginning of a measurement file has.
-
- @return a tibble
-
- @author Anil Axel Tellbüscher
-
- @importFrom readr read_delim
-
- @export
+\author{
+Anil Axel Tellbüscher
 }
