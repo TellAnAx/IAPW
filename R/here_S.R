@@ -4,11 +4,11 @@
 #' the private folder on S: drive. Note that the function only works
 #' when the computer is connected  to the university network.
 #'
-#' @param file_path character; path to file.
+#' @param file_path character; path to file in the selected folder.
 #' @param name character; name of employee, usually in the format
 #' "LASTNAME FIRSTNAME". The name is read from .Renviron by default.
 #' @param folder character; indicates whether to set the path to the
-#' "READ ONLY" or the "READ WRITE FREE" folder.
+#' "READ ONLY" `('read')` or the "READ WRITE FREE" `('read_write')`folder.
 #' @param server_path character; hard-coded path to the employee folders
 #' on S: drive.
 #'
@@ -29,14 +29,14 @@ here_S <- function(file_path,
   # Create folder_path, based on the last name and the selected folder
   last_name <- strsplit(name, " ")[[1]][1]
 
-  if(folder == "r") {
+  if(folder == "read") {
     folder_name <- "READ ONLY"
-  } else if (folder == "w") {
+  } else if (folder == "read_write") {
     folder_name <- "READ WRITE FREE"
   } else {
     warning("Select the folder!\n
-            'r'   = READ ONLY\n
-            'w'  = READ WRITE FREE")
+            'read'   = READ ONLY\n
+            'read_write'  = READ WRITE FREE")
   }
 
   folder_path <- paste(last_name, "-", folder_name)

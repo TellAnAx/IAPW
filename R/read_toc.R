@@ -19,7 +19,7 @@
 #' @importFrom dplyr if_else
 #'
 #' @export
-read_toctn <- function(
+read_toc <- function(
 
     # Define the path to the file to load
     file_path,
