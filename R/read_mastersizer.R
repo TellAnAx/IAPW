@@ -1,4 +1,4 @@
-#' Imoprt data from MasterSizer 3000
+#' Import data from MasterSizer 3000
 #'
 #' Convenience function to import data files from Malvern Panalytics
 #' MasterSizer 3000 laser diffraction particle analyzer equipped with
@@ -18,7 +18,7 @@
 #' @importFrom readr locale
 #'
 #' @export
-read_ms3000 <- function(
+read_mastersizer <- function(
 
     file_path,
 
