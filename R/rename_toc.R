@@ -13,7 +13,7 @@
 #' @importFrom dplyr rename_with
 #'
 #' @export
-rename_toctn <- function(data) {
+rename_toc <- function(data) {
   rename_columns <- function(colnames_raw) {
     dplyr::case_when(
       colnames_raw == "Type" ~ "type",
