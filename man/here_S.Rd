@@ -12,13 +12,13 @@ here_S(
 )
 }
 \arguments{
-\item{file_path}{character; path to file.}
+\item{file_path}{character; path to file in the selected folder.}
 
 \item{name}{character; name of employee, usually in the format
 "LASTNAME FIRSTNAME". The name is read from .Renviron by default.}
 
 \item{folder}{character; indicates whether to set the path to the
-"READ ONLY" or the "READ WRITE FREE" folder.}
+"READ ONLY" `('read')` or the "READ WRITE FREE" `('read_write')`folder.}
 
 \item{server_path}{character; hard-coded path to the employee folders
 on S: drive.}
