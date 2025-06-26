@@ -22,7 +22,7 @@ read_chnso <- function(file_path, mode = "chns") {
     print(cat("Non-standard mode selected!\n Did you really run the analysis in", toupper(mode), "mode?"))
   }
 
-  imported_data <- readxl::read_xls(path = file_path, ..., col_names = FALSE)
+  imported_data <- readxl::read_xls(path = file_path, col_names = FALSE)
 
   return(imported_data)
 }
