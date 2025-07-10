@@ -5,7 +5,47 @@
 #'
 #' @param data input data to rename columns
 #'
-#' @return something
+#' @details
+#' Column name mappings used in the function:
+#' \itemize{
+#'   \item{type}{Mapped from "Action"}
+#'   \item{id1_sample}{Mapped from "Sample ID"}
+#'   \item{X}{Mapped from "X"}
+#'   \item{M}{Mapped from "M"}
+#'   \item{Q}{Mapped from "Q"}
+#'   \item{conc_true}{Mapped from "True Value (mg/L)"}
+#'   \item{conc}{Mapped from "Conc. (mg/L)"}
+#'   \item{abs}{Mapped from "Abs."}
+#'   \item{bg}{Mapped from "BG"}
+#'   \item{process}{Mapped from "Data Process Range (sec)"}
+#'   \item{position}{Mapped from "Pos."}
+#'   \item{V}{Mapped from "VOL"}
+#'   \item{diluent}{Mapped from "Diluent"}
+#'   \item{reagent1}{Mapped from "Reagent 1"}
+#'   \item{reagent2}{Mapped from "Reagent 2"}
+#'   \item{reagent3}{Mapped from "Reagent 3"}
+#'   \item{V_total}{Mapped from "Total Volume"}
+#'   \item{factor_m}{Mapped from "WF"}
+#'   \item{factor_V}{Mapped from "VF"}
+#'   \item{factor_dil}{Mapped from "DF"}
+#'   \item{factor_dil_asc}{Mapped from "ASC DF"}
+#'   \item{factor_cor}{Mapped from "CF"}
+#'   \item{actual}{Mapped from "Actual Conc."}
+#'   \item{actual_unit}{Mapped from "Actual Conc. Unit"}
+#'   \item{rsd}{Mapped from "%RSD"}
+#'   \item{sd}{Mapped from "SD"}
+#'   \item{rpd}{Mapped from "RPD"}
+#'   \item{recovery}{Mapped from "%R"}
+#'   \item{cal_no}{Mapped from "C#"}
+#'   \item{sample_group}{Mapped from "SG#"}
+#'   \item{remark}{Mapped from "Out of Control Remark"}
+#'   \item{date}{Mapped from "Date"}
+#'   \item{time}{Mapped from "Time"}
+#'   \item{user}{Mapped from "User Name"}
+#'   \item{device}{Mapped from "Device Name"}
+#' }
+#'
+#' @return a tibble
 #'
 #' @author Anil Axel Tellbüscher
 #'
@@ -25,7 +65,7 @@ rename_aas <- function(data) {
       colnames_raw == "Conc. (mg/L)" ~ "conc",
       colnames_raw == "Abs." ~ "abs",
       colnames_raw == "BG" ~ "bg",
-      colnames_raw == "Data Process Range (sec)",
+      colnames_raw == "Data Process Range (sec)" ~ "process",
       colnames_raw == "Pos." ~ "position",
       colnames_raw == "VOL" ~ "V",
       colnames_raw == "Diluent" ~ "diluent",
