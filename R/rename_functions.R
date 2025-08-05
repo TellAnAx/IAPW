@@ -78,7 +78,6 @@
 #'
 #' @importFrom dplyr case_when
 #' @importFrom dplyr rename_with
-#' @importFrom magrittr %>%
 #'
 #' @export
 rename_aas <- function(data) {
