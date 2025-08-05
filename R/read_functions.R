@@ -118,9 +118,8 @@ read_mastersizer <- function(
 #'  ZR.
 #'
 #' @param file_path character; path to the file to load
-#' @param detailed logical; indicating whether the file to be loaded is a basic
-#' report (only summarized results) or a detailed report (including data from
-#' individual injections).
+#' @param skip_lines numeric; indicating how many lines of the input file should be
+#' skipped
 #' @param ... further arguments passed to or from other methods.
 #'
 #' @return a tibble
@@ -129,7 +128,6 @@ read_mastersizer <- function(
 #'
 #' @importFrom readr read_delim
 #' @importFrom readr locale
-#' @importFrom dplyr if_else
 #'
 #' @export
 read_toc <- function(
@@ -140,7 +138,7 @@ read_toc <- function(
   # Define whether the file to be loaded is
   # "detailed": including data from each individual sample injection
   # "standard": including summarized results
-  detailed = FALSE,
+  skip_lines = 9,
 
   ...
 ) {
@@ -149,7 +147,7 @@ read_toc <- function(
     file = file_path,
     delim =  "\t",
     locale = readr::locale(decimal_mark = ","),
-    skip = dplyr::if_else(detailed == TRUE, 13, 11)
+    skip = skip_lines
   )
 
   return(toctn_data)

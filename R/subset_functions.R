@@ -15,10 +15,6 @@
 #'
 #' @return A tibble with the selected subset of columns
 #'
-#' @examples
-#' data %>%
-#'   rename_aas() %>%
-#'   select_aas_subset("calibration")
 #'
 #' @export
 select_aas_subset <- function(data, subset = "flame") {

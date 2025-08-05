@@ -1,7 +1,7 @@
 Package: IAPW
 Type: Package
 Title: Convenience functions for the Institute of Aquaculture and Protection of Waters
-Version: 0.1.0
+Version: 0.1.1
 Author: Anil Axel Tellbüscher
 Maintainer: Anil Axel Tellbüscher <anil@tellbuescher.online>
 Description: More about what it does (maybe more than one line)
@@ -13,4 +13,5 @@ RoxygenNote: 7.3.2
 Imports: 
     dplyr,
     readr,
-    readxl
+    readxl,
+    magrittr
