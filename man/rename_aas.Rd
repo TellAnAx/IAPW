@@ -19,7 +19,7 @@ Shimadzu AA-7000 Flame-Atomic Absorption Spectroscope (F-AAS).
 \details{
 Column name mappings used in the function:\cr
 \itemize{
-  \item{type: }{Sample type:\cr
+  \describe{type: }{Sample type:\cr
     - STD: Standard used to create the calibration curve\cr
     - BLK: Blank sample\cr
     - UNK: Unknown sample\cr

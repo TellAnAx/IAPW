@@ -8,7 +8,7 @@
 #' @details
 #' Column name mappings used in the function:\cr
 #' \itemize{
-#'   \item{type: }{Sample type:\cr
+#'   \describe{type: }{Sample type:\cr
 #'     - STD: Standard used to create the calibration curve\cr
 #'     - BLK: Blank sample\cr
 #'     - UNK: Unknown sample\cr

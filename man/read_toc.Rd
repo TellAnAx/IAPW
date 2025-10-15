@@ -4,15 +4,18 @@
 \alias{read_toc}
 \title{Import data from Shimadzu TOC-L/TNM-L}
 \usage{
-read_toc(file_path, skip_lines = 9, ...)
+read_toc(file_path, ..., header_keywords = "Data")
 }
 \arguments{
 \item{file_path}{character; path to the file to load}
 
-\item{skip_lines}{numeric; indicating how many lines of the input file should be
-skipped}
-
 \item{...}{further arguments passed to or from other methods.}
+
+\item{header_keywords}{character vector; keywords used to identify the header line
+in the Shimadzu TOC-L/TNM-L output file. The function scans each line and selects
+the first line that contains all specified keywords. This allows dynamic detection
+of the data table start, even if the number of header lines varies.
+Default is \code{c("Sample Name", "Result(TOC)")}.}
 }
 \value{
 a tibble
