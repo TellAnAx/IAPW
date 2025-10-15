@@ -118,8 +118,11 @@ read_mastersizer <- function(
 #'  ZR.
 #'
 #' @param file_path character; path to the file to load
-#' @param skip_lines numeric; indicating how many lines of the input file should be
-#' skipped
+#' @param header_keywords character vector; keywords used to identify the header line
+#' in the Shimadzu TOC-L/TNM-L output file. The function scans each line and selects
+#' the first line that contains all specified keywords. This allows dynamic detection
+#' of the data table start, even if the number of header lines varies.
+#' Default is \code{c("Sample Name", "Result(TOC)")}.
 #' @param ... further arguments passed to or from other methods.
 #'
 #' @return a tibble
@@ -128,26 +131,32 @@ read_mastersizer <- function(
 #'
 #' @importFrom readr read_delim
 #' @importFrom readr locale
+#' @importFrom purrr map_lgl
+#' @importFrom stringr str_detect
 #'
 #' @export
-read_toc <- function(
+read_toc <- function(file_path, ..., header_keywords = "Data") {
 
-  # Define the path to the file to load
-  file_path,
+  # Read all lines from the file
+  lines <- read_lines(file_path)
 
-  # Define whether the file to be loaded is
-  # "detailed": including data from each individual sample injection
-  # "standard": including summarized results
-  skip_lines = 9,
+  # Detect the header line index using purrr and stringr
+  header_line <- lines %>%
+    purrr::map_lgl(~ all(stringr::str_detect(.x, header_keywords))) %>%
+    which() %>%
+    first()
 
-  ...
-) {
+  if (is.na(header_line)) {
+    stop("Header line not found. Please check the file format or header_keywords.")
+  }
 
-  toctn_data <- readr::read_delim(
+  # Read the data using readr::read_delim with dynamic skip
+  toctn_data <- read_delim(
     file = file_path,
-    delim =  "\t",
-    locale = readr::locale(decimal_mark = ","),
-    skip = skip_lines
+    delim = "\t",
+    locale = locale(decimal_mark = ","),
+    skip = header_line,
+    ...
   )
 
   return(toctn_data)
