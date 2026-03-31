@@ -27,4 +27,5 @@ Thumbs.db
 *.swo
 
 # Miscellaneous
+setup.R
 analyses/
