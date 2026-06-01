@@ -1,7 +1,8 @@
-#' Rename data from Shimadzu F-AAS
+#' Rename Shimadzu WizAArd raw export files
 #'
-#' Function to automatically rename column names of data imports from the
-#' Shimadzu AA-7000 Flame-Atomic Absorption Spectroscope (F-AAS).
+#' Function to automatically rename columns from raw data obtained from the
+#' Shimadzu WizAArd software used together with the Shimadzu AA-7000 
+#' Flame-Atomic Absorption Spectrometer (F-AAS).
 #'
 #' @param data input data to rename columns
 #'
@@ -85,10 +86,10 @@ rename_aas <- function(data) {
   rename_columns <- function(colnames_raw) {
     dplyr::case_when(
       colnames_raw == "Action" ~ "type",
-      colnames_raw == "Sample ID" ~ "id_sample",
-      colnames_raw == "X" ~ "X",
+      colnames_raw == "Sample ID" ~ "sample_id",
+      colnames_raw == "X" ~ "excluded",
       colnames_raw == "M" ~ "M",
-      colnames_raw == "Q" ~ "Q",
+      colnames_raw == "Q" ~ "QC",
       colnames_raw == "True Value (mg/L)" ~ "conc_true",
       colnames_raw == "Conc. (mg/L)" ~ "conc",
       colnames_raw == "Abs." ~ "abs",
@@ -132,23 +133,47 @@ rename_aas <- function(data) {
 
 
 
-#' Rename data from ThermoFisher FLASH 2000
+#' Rename Skalar BluVision export files
+#' 
+#' @export
+rename_bluvision <- function(data) {
+  
+  
+  
+  return(data)
+}
+
+
+
+
+#' Rename ThermoFisher FLASH2000 raw export files
+#' 
+#' @param data input data to rename columns
 #'
 #' @author Anil Axel Tellbüscher
+#' 
 #'
 #' @export
-rename_chnso <- function(){
-
+rename_chnso <- function(data){
+  
+  column_names <- c(
+    
+  )
+  
+  colnames(data) <- column_names 
+    
+  return(data)
 }
 
 
 
 
 
-#' Rename data from Shimadzu TOC-L/TNM-L
+#' Rename Shimadzu TOC Control export files
 #'
-#' Function to automatically rename column names of data imports from the
-#' Shimadzu TOC-L/TNM-L analyzer.
+#' Function to automatically rename column names of ASCII export files from 
+#' the Shimadzu TOC Control software that comes with the Shimadzu TOC-L 
+#' analyzer.
 #'
 #' @param data input data to rename columns
 #'
@@ -163,10 +188,10 @@ rename_chnso <- function(){
 rename_toc <- function(data) {
   rename_columns <- function(colnames_raw) {
     dplyr::case_when(
-      colnames_raw == "Type" ~ "type",
-      colnames_raw == "Anal." ~ "analyte",
-      colnames_raw == "Sample Name" ~ "id1_sample",
-      colnames_raw == "Sample ID" ~ "id2_sample",
+      colnames_raw == "Type" ~ "sample_type",
+      colnames_raw == "Anal." ~ "method",
+      colnames_raw == "Sample Name" ~ "sample_id",
+      colnames_raw == "Sample ID" ~ "sample_id2",
       colnames_raw == "Origin" ~ "path_method",
       colnames_raw == "Cal. Curve" ~ "path_calib",
       colnames_raw == "Manual Dilution" ~ "dil_manual",
