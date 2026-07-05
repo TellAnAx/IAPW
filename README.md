@@ -1,5 +1,6 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- README.md is generated from README.Rmd. 
+     Please edit README.Rmd if you want to make changes. -->
 
 # IAPW package
 
@@ -16,8 +17,8 @@ You can install the latest version of the IAPW package using the
 following command:
 
 ``` r
-require(devtools)
-devtools::install_github("TellAnAx/IAPW")
+require(pak)
+pak::pkg_install("TellAnAx/IAPW")
 ```
 
 # Hints for usage

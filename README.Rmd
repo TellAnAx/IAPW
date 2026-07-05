@@ -3,7 +3,8 @@ output: github_document
 always_allow_html: true
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- README.md is generated from README.Rmd. 
+     Please edit README.Rmd if you want to make changes. -->
 
 ```{r echo=FALSE}
 knitr::opts_chunk$set(
@@ -23,8 +24,8 @@ This package provides convenience functions to import data from laboratory devic
 You can install the latest version of the IAPW package using the following command:
 
 ```{r, eval=FALSE}
-require(devtools)
-devtools::install_github("TellAnAx/IAPW")
+require(pak)
+pak::pkg_install("TellAnAx/IAPW")
 ```
 
 
